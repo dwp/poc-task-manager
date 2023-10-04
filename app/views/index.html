@@ -1,133 +1,20 @@
-{% extends "layouts/main-pip.html" %}
+{% extends "layouts/main.html" %}
 
 {% set pageName="Home" %}
-
-{% block beforeContent %}
-
-    <div class="govuk-phase-banner">
-      <p class="govuk-phase-banner__content">
-        <strong class="govuk-tag govuk-tag--red govuk-phase-banner__content__tag">
-          Non clinical admin team
-        </strong>
-        <strong class="govuk-tag govuk-tag--red govuk-phase-banner__content__tag">
-          HCP
-        </strong>
-        <strong class="govuk-tag govuk-tag--blue govuk-phase-banner__content__tag">
-          HAS: Decide
-        </strong>
-        <strong class="govuk-tag govuk-tag--green govuk-phase-banner__content__tag">
-          Pre-assessment referral
-        </strong>
-        <strong class="govuk-tag govuk-tag--green govuk-phase-banner__content__tag">
-          Decision making
-        </strong>
-      </p>
-    </div>
-
-{% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
 
     <h1 class="govuk-heading-xl">
-      {{ serviceName }} prototypes
+      {{ serviceName }}
     </h1>
 
-
-    <h2 class="govuk-heading-l">
-      <span class="govuk-caption-l">{{ serviceName }}</span>HAS
-    </h2>
-
-    <p class="govuk-heading-m">Purpose: To introduce task-based workloads as an alternative to caseloads and statuses.</p>
-
-    <hr>
-      <h3 class="govuk-heading-m">V3 - Current iteration</h3>
-      <p>Refined based on stakeholder feedback.</p>
-      <p> Minimalist standalone UI to reduce dependency on other teams. Added examples of how errors should be displayed.</p>
-
-    <p>
-      <a href="task-management-HAS-v3/flow-start" class="govuk-link">
-        Start prototype
-      </a>
-    </p>
-    <p>
-      <a href="task-management-HAS-v3/errors/start" class="govuk-link">
-        View error examples
-      </a>
-    </p>
-
-    <br>
-
-    <hr>
-      <h3 class="govuk-heading-m">V2 - Refined scope</h3>
-    <p>Updated flow to reflect the scope of the POC work.</p>
-    <p>Streamlined flow to allow only the initial functionality to be demonstrated.</p>
-
-    <p>
-      <a href="task-management-HAS-v2/flow-start" class="govuk-link">
-        Start prototype
-      </a>
-    </p>
-
-    <br>
-
-    <hr>
-    <h3 class="govuk-heading-m">V1 - Initial flow</h3>
-    <p>Initial thoughts - within existing HAS workflow</p>
-    <p>This is likely to be an end state as it includes additional functionality allowing an Agent to reject a task and choose another.</p>
-
-    <p>
-      <a href="task-management-HAS-v1/flow-start" class="govuk-link">
-        Start prototype
-      </a>
-    </p>
-    <br>
-      
-      
-      <br>
-      <br>
-
-     
-
-      <h2 class="govuk-heading-l">
-        <span class="govuk-caption-l">{{ serviceName }}</span>PIP
-      </h2>
-  
-
-      <p class="govuk-heading-m">Deprecated</p>
-
-      <hr>
-
-      <h3 class="govuk-heading-m">V2 - Screen & flow refinments</h3>
-      <p>Updated layouts to match those used in PIP already <strong>(WORK IN PROGRESS)</strong></p>
-  
-      <p>
-        <a href="task-management-PIP-v2/pip-home?isCompleted=no&isRejected=no" class="govuk-link">
-          Start prototype
-        </a>
-      </p>
-  
-      <br>
-      <hr>
-
-      <h3 class="govuk-heading-m">V1 - Initial flow</h3>
-      <p>Initial thoughts - within existing PIP workflow</p>
-  
-      <p>
-        <a href="task-management-PIP-v1/flow-start" class="govuk-link">
-          Start prototype
-        </a>
-      </p>
-  
-      <br>
-
+    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
   </div>
-
-
-
 </div>
 
 {% endblock %}
