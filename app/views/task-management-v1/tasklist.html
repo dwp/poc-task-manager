@@ -1,0 +1,260 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Task itself...
+{% endblock %}
+
+{% block header %}
+
+  {% include "includes/blue-banner-awaiting-hcpreview.html" %}
+
+
+  <main>
+    <header class="moj-primary-navigation">
+    <div class="govuk-width-container ">
+      <div class="moj-primary-navigation">
+
+        <div class="moj-primary-navigation__container">
+      
+          <div class="moj-primary-navigation__nav">
+      
+            <nav class="moj-primary-navigation" aria-label="Primary navigation">
+      
+              <ul class="moj-primary-navigation__list">
+                <li class="moj-primary-navigation__item" style="border-bottom: 5px solid #1d70b8;"> 
+                  <a class="moj-primary-navigation__link" aria-current="page" href="#">Tasks to do</a>
+                </span>  </li>
+      
+                <li class="moj-primary-navigation__item">
+                 
+                 
+                  {% if  data['task1']   == 'Yes' %}
+                  
+                  <a class="moj-primary-navigation__link" href="#">Claimant documents</a>
+
+                  {% else %}
+                  <a class="moj-primary-navigation__link" href="#">Claimant documents</a>
+                  {% endif %} 
+
+                </li>
+      
+                <li class="moj-primary-navigation__item">
+
+                  {% if  data['task2']   == 'Yes' %}
+
+                  <a class="moj-primary-navigation__link" href="#">HCP review</a>
+                  {% else %}
+                  <a class="moj-primary-navigation__link" href="#">HCP review</a>
+
+                  {% endif %} 
+
+                </li>
+
+                <li class="moj-primary-navigation__item">
+                  <a class="moj-primary-navigation__link" href="#">Timeline</a>
+                </li>
+
+
+              </ul>
+      
+            </nav>
+      
+          </div>
+        </div>
+      
+      </div>
+      
+
+        
+    </div>
+    </header>
+    </main> 
+
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row" style="margin-top: -40px;">
+    <div class="govuk-grid-column-two-thirds">
+
+      <a href="agent-task" class="govuk-back-link" style="margin-bottom:40px;">Back</a>
+
+
+      <h1 class="govuk-heading-l">
+        Tasks to complete
+      </h1>
+
+      <p>Medical evidence received. The following tasks now need to be reviewed.</p>
+    
+
+      <ol class="govuk-prototype-kit-task-list">
+        <li>
+          <h2 class="govuk-prototype-kit-task-list__section">
+            <span class="govuk-prototype-kit-task-list__section-number">1. </span> New document received <!-- {{ data['task1'] }}   -->
+          </h2>
+          <ul class="govuk-prototype-kit-task-list__items">
+            <li class="govuk-prototype-kit-task-list__item">
+
+              {% if  data['task1']   == 'Yes' %}
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Review document      
+
+                </a>
+              </span>
+
+             
+
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+              {% else %}
+
+
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                  Review document      
+
+                </a>
+              </span>
+
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+
+              {% endif %} 
+
+
+            </li>
+           
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="govuk-prototype-kit-task-list__section">
+            <span class="govuk-prototype-kit-task-list__section-number">2. </span> Update HCP review
+          </h2>
+          <ul class="govuk-prototype-kit-task-list__items">
+           
+            {% if  data['task2']   == 'Yes' %}
+
+            <li class="govuk-prototype-kit-task-list__item">
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="other-services/hcp-view-added" aria-describedby="contact-details-status">
+                  View and add to HCP review
+                </a>
+              </span>
+          
+          
+            
+
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+              {% else %}
+
+              <li class="govuk-prototype-kit-task-list__item">
+                <span class="govuk-prototype-kit-task-list__task-name">
+                  <a href="#" aria-describedby="contact-details-status">
+                    View and add to HCP review
+                  </a>
+                </span>
+
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+
+              {% endif %} 
+            
+            </li>
+           
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="govuk-prototype-kit-task-list__section">
+            <span class="govuk-prototype-kit-task-list__section-number">3. </span> Update timeline
+          </h2>
+          <ul class="govuk-prototype-kit-task-list__items">
+            <li class="govuk-prototype-kit-task-list__item">
+
+
+              {% if (data['task1']   == 'Yes') and (data['task2']   == 'Yes') %}
+
+             
+
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="other-services/timeline-view" aria-describedby="contact-details-status">
+                  Log medical evidence reviewed
+                </a>
+              </span>   {% else %}
+
+              <span class="govuk-prototype-kit-task-list__task-name">
+                Log medical evidence reviewed
+              </span>
+
+              {% endif %} 
+
+
+             
+              {% if (data['task1']   == 'Yes') and (data['task2']   == 'Yes') and (data['task3']  == 'Yes') %}
+
+              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+              {% endif %} 
+
+              {% if (data['task1']   == 'Yes') and (data['task2']   == 'Yes') and (data['task3']  != 'Yes') %}
+
+             
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+
+              {% endif %} 
+
+              {% if (data['task1']   != 'Yes') or (data['task2']   != 'Yes')  %}
+
+
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+
+              {% endif %} 
+            </li>
+          </ul>
+
+
+        
+  
+               
+  
+               
+                {% if (data['task1']   == 'Yes') and (data['task2']   == 'Yes') and (data['task3']  == 'Yes')  %}
+   
+                <a href="select-status"> 
+                <button class="govuk-button" data-module="govuk-button">Change status </button>
+              </a>
+
+                {% endif %} 
+              </li>
+            </ul>
+
+     
+
+
+        </li>
+      </ol>
+
+<!--
+      <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+      <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+      <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
+      <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
+
+    -->
+    </div>
+
+    <div class="govuk-grid-column-one-third" >
+
+      <h3 class="govuk-heading-m">What you can do next</h3>
+      <ul class="govuk-list">
+         
+
+      <li class="govuk-!-margin-bottom-2"><a href="move-task">Move this case back to task queue </a></li> 
+          
+       
+      
+    </div>
+  </div>
+
+{% endblock %}
