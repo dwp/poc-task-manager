@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Complete task
+{% endblock %}
+
+{% block header %}
+
+{% include "includes/blue-banner-awaiting-hcpreview-2.html" %}
+
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Complete this task?</h1>
+
+
+    <form action="agent-task-2" method="post" class="form">
+      <div class="hidden-radio-post">
+        <div class="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="newtask-false" name="newtask"
+            type="radio" value="false" {{ checked("newtask", "false" ) }}checked>
+            <label class="govuk-label govuk-radios__label" for="newtask-true">
+              New task = false
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Complete task
+      </button>
+    </form>
+
+    
+
+  </div>
+</div>
+
+{% endblock %}

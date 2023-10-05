@@ -1,0 +1,93 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Prototype page title
+{% endblock %}
+
+{% block header %}
+
+  {% include "includes/internal-header.html" %}
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-l">
+       Tasks
+      <!-- {{ data['newtask'] }} -->
+     
+     
+      </h1>
+
+      
+      {% if  data['newtask']   != 'true' %}
+      <p>You have no tasks in progress.</p>
+      {% endif %} 
+ 
+
+      <form action="tasklist-2" method="post" class="form">
+        <div class="hidden-radio-post">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="newtask-true" name="newtask"
+              type="radio" value="true" {{ checked("newtask", "true" ) }}checked>
+              <label class="govuk-label govuk-radios__label" for="newtask-true">
+                New task = true
+              </label>
+            </div>
+          </div>
+        </div>
+  
+        <button class="govuk-button" data-module="govuk-button">
+          Get a new task
+        </button>
+      </form>
+
+<!-- <a href="tasklist-2"> 
+      <button class="govuk-button" data-module="govuk-button">Get a new task</button>
+    </a> -->
+      
+<!--Show when new task is picked up-->
+
+   {% if  data['newtask']   == 'true' %}
+     
+
+       <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Tasks in progress</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Claimant name</th>
+            <th scope="col" class="govuk-table__header">Referral date</th>
+            <th scope="col" class="govuk-table__header">Benefit type</th>
+            <th scope="col" class="govuk-table__header">Tasks to do</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="tasklist-2">Jack Ryan</a></th>
+            <td class="govuk-table__cell">24 August 2023</td>
+            <td class="govuk-table__cell">PIP</td>
+            <td class="govuk-table__cell">Review medical evidence</td>
+          </tr>
+        
+        </tbody>
+      </table>
+     
+       {% endif %} 
+    
+    </div>
+  </div>
+
+{% endblock %}
