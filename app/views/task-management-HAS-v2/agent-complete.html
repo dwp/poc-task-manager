@@ -25,12 +25,30 @@ href: "javascript:window.history.back()"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Complete this task?</h1>
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        Have you completed this task?
+      </legend>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="haveYouCompletedThisTask" name="haveYouCompletedThisTask" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisTask">
+            Yes, I’ve completed this task
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="haveYouCompletedThisTask-2" name="haveYouCompletedThisTask" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisTask-2">
+            No, I’ll come back to it later
+          </label>
+        </div>
+      </div>
+    </fieldset>
 
-
-    <a href="agent-task-2">
+    <br>
+    <a href="agent-task-3">
       <button class="govuk-button" data-module="govuk-button">
-        Complete task
+        Continue
       </button>
     </a>
 

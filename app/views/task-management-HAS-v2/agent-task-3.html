@@ -14,7 +14,7 @@ Prototype page title
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "javascript:window.history.back()"
+  href: "./flow-start"
 }) }}
 {% endblock %}
 
@@ -49,15 +49,7 @@ Prototype page title
           </tr>
         </thead>
         <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"><a href="tasklist">Jane Doe</a></th>
-            <td class="govuk-table__cell">22 August 2023</td>
-            <td class="govuk-table__cell">PIP</td>
-            <td class="govuk-table__cell">Review medical evidence</td>
-            <td class="govuk-table__cell">Review the newly received document and add outcome details to HCP
-              review.</td>
-              <!-- <td class="govuk-table__cell"><a href="tasklist">Start task</a></td> -->
-          </tr>
+          
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="tasklist-2">Jack Ryan</a></th>
             <td class="govuk-table__cell">24 August 2023</td>
