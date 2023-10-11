@@ -1,0 +1,266 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Task itself...
+{% endblock %}
+
+{% block header %}
+
+  {% include "includes/blue-banner-awaiting-hcpreview-2.html" %}
+  
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+  
+  <main
+    class="govuk-main-wrapper govuk-main-wrapper--auto-spacing"
+    id="main-content"
+  >
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form
+          class="form"
+          action="tasklist-2"
+          autocomplete="off"
+          method="post"
+          novalidate=""
+        >
+          <input type="hidden" name="_csrf" value="" />
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">Select a status</h1>
+              </legend>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state"
+                    name="state"
+                    type="radio"
+                    value="11"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state">
+                    Assigned
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-2"
+                    name="state"
+                    type="radio"
+                    value="15"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-2">
+                    HCP review
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-3"
+                    name="state"
+                    type="radio"
+                    value="16"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-3">
+                    Request medical evidence
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-4"
+                    name="state"
+                    type="radio"
+                    value="17"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-4">
+                    Awaiting medical evidence
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-5"
+                    name="state"
+                    type="radio"
+                    value="18"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-5">
+                    Medical evidence not received
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-6"
+                    name="state"
+                    type="radio"
+                    value="19"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-6">
+                    Medical evidence received
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-7"
+                    name="state"
+                    type="radio"
+                    value="20"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-7">
+                    Book assessment
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-8"
+                    name="state"
+                    type="radio"
+                    value="6"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-8">
+                    Assessment booked
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-9"
+                    name="state"
+                    type="radio"
+                    value="27"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-9">
+                    PIP paper based review
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-10"
+                    name="state"
+                    type="radio"
+                    value="23"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-10">
+                    Failed to attend
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-11"
+                    name="state"
+                    type="radio"
+                    value="24"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-11">
+                    Report ready
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-12"
+                    name="state"
+                    type="radio"
+                    value="25"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-12">
+                    HCP audit
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-13"
+                    name="state"
+                    type="radio"
+                    value="26"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-13">
+                    PIPCS descriptors updated
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-14"
+                    name="state"
+                    type="radio"
+                    value="8"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-14">
+                    Done
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-15"
+                    name="state"
+                    type="radio"
+                    value="9"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-15">
+                    Withdrawn
+                  </label>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input
+                    class="govuk-radios__input"
+                    id="state-16"
+                    name="state"
+                    type="radio"
+                    value="10"
+                  />
+                  <label class="govuk-label govuk-radios__label" for="state-16">
+                    Created in error
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button" id="submit">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+{% endblock %}
