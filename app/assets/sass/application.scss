@@ -436,6 +436,13 @@ a:visited {
   .govuk-link:link, .app-prose-scope a:link {
       color: #1d70b8;
   }
+
+  .govuk-link:link[aria-disabled="true"]{
+    color:#505a5f;
+    cursor:not-allowed;
+    text-decoration: none;;
+  }
+
   .app-subnav__link {
       padding: 2px 0;
       text-underline-offset: 0.4em;
