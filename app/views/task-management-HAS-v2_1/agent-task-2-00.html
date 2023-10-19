@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+    Prototype page title
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Task completed
+    </h3>
+    <!-- <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p> -->
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Tasks</h1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">
+          Review further medical evidence (ESA)
+          <p class="govuk-body-l">
+            <a href="review-task-00" class="govuk-link"><b>Get next task</b></a>
+          </p>
+        </h2>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-l">
+          3
+          <p class="govuk-body govuk-!-font-size-24">total tasks</p>
+        </h3>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">
+          Review further medical evidence (PIP)
+          <p class="govuk-body-l">
+            <a href="#" class="govuk-link"><b>Get next task</b></a>
+          </p>
+        </h2>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-l">
+          24
+          <p class="govuk-body govuk-!-font-size-24">total tasks</p>
+        </h3>
+      </div>
+    </div>
+    <hr>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">
+          Review further medical evidence (UC)
+          <p class="govuk-body-l">
+            <a href="#" class="govuk-link"><b>Get next task</b></a>
+          </p>
+        </h2>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-l">
+          10
+          <p class="govuk-body govuk-!-font-size-24">total tasks</p>
+        </h3>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

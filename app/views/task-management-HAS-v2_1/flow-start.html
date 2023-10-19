@@ -1,0 +1,116 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+As-is entry - 01
+{% endblock %}
+
+{% block header %}
+
+{% include "includes/internal-header.html" %}
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+               
+  <h1 class="govuk-heading-l">Main menu</h1>
+   
+  <div class="dwp-card dwp-card--clickable">
+    <div class="dwp-card__content">
+      <h2 class="dwp-card__heading dwp-heading-m" id="filter">
+        <a class="dwp-card__link govuk-link" href="./agent-task-00">Get a task</a>
+      </h2>
+      <p class="dwp-card__description">Get a new task to start processing</p>
+    </div>
+  </div>
+
+  <div class="dwp-card dwp-card--clickable">
+    <div class="dwp-card__content">
+      <h2 class="dwp-card__heading dwp-heading-m" id="filter">
+        <a class="dwp-card__link govuk-link" href="#">View a caseload or status</a>
+      </h2>
+      <p class="dwp-card__description">View a referral in progress by caseload or status</p>
+    </div>
+  </div>
+
+     
+  <div class="dwp-card dwp-card--clickable">
+    <div class="dwp-card__content">
+      <h2 class="dwp-card__heading dwp-heading-m" id="find-a-claimant">
+        <a class="dwp-card__link govuk-link" href="#">Find a claimant</a>
+      </h2>
+      <p class="dwp-card__description">Search for a claimant to view their referral</p>
+    </div>
+  </div>
+
+   
+  <div class="dwp-card dwp-card--clickable">
+    <div class="dwp-card__content">
+      <h2 class="dwp-card__heading dwp-heading-m" id="unassigned-referrals">
+        <a class="dwp-card__link govuk-link" href="#">New referrals to assign (8)</a>
+      </h2>
+      <p class="dwp-card__description">Assign new referrals to a caseload</p>
+    </div>
+  </div>
+
+
+ 
+  <div class="dwp-card dwp-card--clickable">
+    <div class="dwp-card__content">
+      <h2 class="dwp-card__heading dwp-heading-m" id="create-referral">
+        <a class="dwp-card__link govuk-link" href="#">Create a referral</a>
+      </h2>
+      <p class="dwp-card__description">Add a paper referral to the active referrals list</p>
+    </div>
+  </div>
+
+ 
+ 
+  <div class="dwp-card dwp-card--clickable">
+    <div class="dwp-card__content">
+      <h2 class="dwp-card__heading dwp-heading-m" id="manage-booking">
+        <a class="dwp-card__link govuk-link" href="#">Manage booked assessments</a>
+      </h2>
+      <p class="dwp-card__description">View or cancel a booked assessment or assign a HCP</p>
+    </div>
+  </div>
+
+ 
+ 
+  <div class="dwp-card dwp-card--clickable">
+    <div class="dwp-card__content">
+      <h2 class="dwp-card__heading dwp-heading-m" id="manage-hcp-profiles">
+        <a class="dwp-card__link govuk-link" href="#">Manage HCP profiles</a>
+      </h2>
+      <p class="dwp-card__description">Add, edit or remove a HCP and their skills</p>
+    </div>
+  </div>
+
+ 
+  <div class="dwp-card dwp-card--clickable">
+    <div class="dwp-card__content">
+      <h2 class="dwp-card__heading dwp-heading-m" id="incomplete-referral">
+        <a class="dwp-card__link govuk-link" href="#">View incomplete referrals</a>
+      </h2>
+      <p class="dwp-card__description">View a list of incomplete referrals</p>
+    </div>
+  </div>
+
+ 
+  <div class="dwp-card dwp-card--clickable">
+    <div class="dwp-card__content">
+      <h2 class="dwp-card__heading dwp-heading-m" id="change-to-pip-referral">
+        <a class="dwp-card__link govuk-link" href="#">Changes to PIP referrals</a>
+      </h2>
+      <p class="dwp-card__description">Confirm new referrals and view alerts for supporting evidence, documents and changes of circumstances added to existing referrals</p>
+    </div>
+  </div>
+
+{% endblock %}
