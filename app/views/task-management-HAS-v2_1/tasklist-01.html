@@ -1,0 +1,274 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Task itself...
+{% endblock %}
+
+{% block header %}
+
+  {% include "includes/blue-banner-awaiting-hcpreview.html" %}
+  
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-main-wrapper govuk-main-wrapper--auto-spacing">
+  <div class="govuk-grid-column-two-thirds">
+    <main id="main-content">
+
+      <h1 class="govuk-heading-m">Personal details</h1>
+
+      <dl class="govuk-summary-list" id="personal-details">
+
+
+        <div class="govuk-summary-list__row preferred-name">
+          <dt class="govuk-summary-list__key">
+            Preferred name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Testings
+          </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row postcode">
+          <dt class="govuk-summary-list__key">
+            Postcode
+          </dt>
+          <dd class="govuk-summary-list__value">
+            B19 1AA
+          </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row home-number">
+          <dt class="govuk-summary-list__key">
+            Home phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row mobile-number">
+          <dt class="govuk-summary-list__key">
+            Mobile phone number
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+
+        </div>
+
+
+      </dl>
+
+      <h2 class="govuk-heading-m">Referral details</h2>
+
+      <dl class="govuk-summary-list" id="referral-details">
+
+
+        <div class="govuk-summary-list__row referral-date">
+          <dt class="govuk-summary-list__key">
+            Referral date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            22 October 2023
+          </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row srti">
+          <dt class="govuk-summary-list__key">
+            End of life
+          </dt>
+          <dd class="govuk-summary-list__value">
+            No
+          </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row benefit-type">
+          <dt class="govuk-summary-list__key">
+            Benefit type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            ESA
+          </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row referral-type">
+          <dt class="govuk-summary-list__key">
+            Referral type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            New referral
+          </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row site-name">
+          <dt class="govuk-summary-list__key">
+            Assessment centre
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Handsworth
+          </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row caseload-name">
+          <dt class="govuk-summary-list__key">
+            Caseload
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Caracara
+          </dd>
+
+        </div>
+
+
+
+        <div class="govuk-summary-list__row next-action-due-date">
+          <dt class="govuk-summary-list__key">
+            Next action due in
+          </dt>
+          <dd class="govuk-summary-list__value">
+            3 days
+          </dd>
+
+        </div>
+
+
+      </dl>
+
+
+      <h2 class="govuk-heading-m">Open task details</h2>
+      <dl class="govuk-summary-list" id="task-details">
+
+
+        <div class="govuk-summary-list__row task-type">
+          <dt class="govuk-summary-list__key">
+            Task
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Review Medical Evidence
+          </dd>
+
+        </div>
+
+        <div class="govuk-summary-list__row task-description">
+          <dt class="govuk-summary-list__key">
+            Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Review the newly received document and add outcome details to HCP review.
+          </dd>
+
+        </div>
+        
+        <div class="govuk-summary-list__row task-description">
+          <dt class="govuk-summary-list__key">
+            Actions
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>
+              <a href="agent-task-2-00">Complete task</a>
+          </p>
+          <br>
+          <p>
+            <a href="agent-task-1-00" class="govuk-link--no-underline">I cannot do this task</a>
+        </p>
+          </dd>
+          
+        </div>
+      </dl> 
+
+
+      
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+
+    <div class="app-related-items" role="complementary">
+      <h2 class="govuk-heading-m" id="subsection-title">
+        What you can do next
+      </h2>
+      <nav aria-labelledby="subsection-title">
+        <ul class="govuk-list">
+
+          <li>
+
+            <a href="tasklist-status" id="action_update_status" class="govuk-link govuk-link--no-visited-state">Update status</a>
+
+          </li>
+
+          <li>
+            <a href="#" id="action_assign_caseload" class="govuk-link govuk-link--no-visited-state">View timeline</a>
+          </li>
+
+          <li>
+            <a href="#" id="action_assign_caseload" class="govuk-link govuk-link--no-visited-state">Add entry to
+              timeline</a>
+          </li>
+
+          <li>
+            <a href="#" id="action_assign_caseload" class="govuk-link govuk-link--no-visited-state">HCP review</a>
+          </li>
+
+          <li>
+
+
+            <a href="#" id="action_assign_caseload" class="govuk-link govuk-link--no-visited-state">View claimant
+              documents</a>
+
+          </li>
+
+          <li>
+
+            <a href="#" id="action_assign_caseload" class="govuk-link govuk-link--no-visited-state">Move to another
+              caseload</a>
+
+
+          </li>
+
+        </ul>
+      </nav>
+    </div>
+    
+
+
+  </div>
+</div>
+</div>
+
+{% endblock %}
