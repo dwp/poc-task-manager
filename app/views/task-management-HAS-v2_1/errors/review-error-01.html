@@ -1,0 +1,91 @@
+
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Error - Rejecting task
+{% endblock %}
+
+{% block header %}
+
+  {% include "includes/internal-header.html" %}
+
+
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" style="margin-top: -40px">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Review this task</h1>
+
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: "Failed to reject task",
+          href: "#reject-task"
+        }
+             ]
+    }) }}
+
+    <div class="govuk-grid-row" style="padding-left: 15px; margin-left:0px; border-left: 5px solid #d4351c;">
+      
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Tasks to do</th>
+          <td class="govuk-table__cell">Review medical evidence</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Referral date</th>
+          <td class="govuk-table__cell">22 October 2023</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Benefit type</th>
+          <td class="govuk-table__cell">ESA</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">End of life</th>
+          <td class="govuk-table__cell">No</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Mental health condition
+          </th>
+          <td class="govuk-table__cell">Yes</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Task descripton</th>
+          <td class="govuk-table__cell">
+            Review the newly received document and add outcome details to HCP
+            review.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+   
+      <a id="start-task" href="tasklist-01" class="govuk-button" data-module="govuk-button">
+        Start task
+      </a>
+      
+      <p class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Failed to reject task, try again
+      </p>
+    <p><a id="reject-task" href="agent-task-1-00">I cannnot do this task</a></p>
+  </div>
+  </div>
+</div>
+
+{% endblock %}
