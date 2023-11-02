@@ -1,0 +1,52 @@
+
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+    Get a new task
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "flow-start"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      Task completed successfully
+    </h3>
+    
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+
+  
+    <h1 class="govuk-heading-l">Tasks in progress</h1>
+
+    
+
+</div>
+
+<div class="govuk-grid-row">
+
+
+  <p>You have no tasks in progress.</p>
+
+  <p>You can <a href="agent-task-new-01">get a new task</a>.</p>
+
+</div>
+
+{% endblock %}

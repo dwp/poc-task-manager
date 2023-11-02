@@ -1,0 +1,61 @@
+
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+    Get a new task
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "flow-start"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <h1 class="govuk-heading-l">Tasks in progress</h1>
+
+    
+
+</div>
+
+<div class="govuk-grid-row">
+
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Claimant name</th>
+        <th scope="col" class="govuk-table__header">Referral date</th>
+        <th scope="col" class="govuk-table__header">Task</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+        <th scope="col" class="govuk-table__header">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"><a href="tasklist">Jane Doe</a></th>
+        <td class="govuk-table__cell">22 August 2023</td>
+        <td class="govuk-table__cell">Review medical evidence (PIP)</td>
+        <td class="govuk-table__cell"><strong class="govuk-tag">Active</strong></td>
+        <td class="govuk-table__cell">
+          <div class="govuk-button-group">
+            <a href="agent-open-tasks-02" class="govuk-button" data-module="govuk-button">
+              Complete task
+            </a>
+            <a class="govuk-link" href="agent-task-new-reject-00">I cannot do this task</a>
+          </div>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
