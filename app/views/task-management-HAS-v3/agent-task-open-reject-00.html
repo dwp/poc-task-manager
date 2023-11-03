@@ -20,32 +20,37 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-
-  {% set html %}
-  <h3 class="govuk-notification-banner__heading">
-    Task returned to queue
-  </h3>
-  
-  {% endset %}  
-
-  {{ govukNotificationBanner({
-    html: html,
-    type: "success"
-  }) }}
-
-
+  <div class="govuk-grid-column-full">
+    
+    {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      Task returned to queue
+    </h3>
+    
+    {% endset %}  
+    
+    {{ govukNotificationBanner({
+      html: html,
+      type: "success"
+    }) }}
+    
+    
     <h1 class="govuk-heading-l">Tasks in progress</h1>
-
-
-</div>
-
+    
+    
+  </div>
+    
+  </div>
+  
 <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
 
 
   <p>You have no tasks in progress.</p>
 
   <p>You can <a href="agent-task-new-00">get a new task</a>.</p>
 
+    </div>  
 </div>
 
 {% endblock %}
