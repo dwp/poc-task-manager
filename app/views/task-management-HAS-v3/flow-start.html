@@ -34,7 +34,11 @@ HAS Entry point
   <div class="dwp-card dwp-card--clickable">
     <div class="dwp-card__content">
       <h2 class="dwp-card__heading dwp-heading-m" id="filter">
-        <a class="dwp-card__link govuk-link" href="agent-open-tasks-00">View my open tasks</a>
+        {% if  data['toComplete']   != 'yes' %}
+          <a class="dwp-card__link govuk-link" href="agent-open-tasks-00">View my open tasks</a>
+        {% else %}
+          <a class="dwp-card__link govuk-link" href="agent-open-tasks-01">View my open tasks</a>
+        {% endif %} 
       </h2>
       <p class="dwp-card__description">View tasks that are currently allocated to you</p>
     </div>
@@ -43,7 +47,7 @@ HAS Entry point
   <div class="dwp-card dwp-card--clickable">
     <div class="dwp-card__content">
       <h2 class="dwp-card__heading dwp-heading-m" id="filter">
-        <a class="dwp-card__link govuk-link" href="#">View a caseload or status</a>
+        <a class="dwp-card__link govuk-link" href="caseload-status">View a caseload or status</a>
       </h2>
       <p class="dwp-card__description">View a referral in progress by caseload or status</p>
     </div>
