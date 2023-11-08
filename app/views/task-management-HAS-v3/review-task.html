@@ -12,6 +12,20 @@ Task flow - 02
 
 {% endblock %}
 
+{% block beforeContent %}
+
+{% if data['hasStarted'] =='yes' %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "agent-open-tasks-01"
+    }) }}
+
+  {% endif %}
+    
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row" >
@@ -52,14 +66,32 @@ Task flow - 02
             review.
           </td>
         </tr>
+        
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Document ID</th>
+          <td class="govuk-table__cell">
+            001234-234500-00232323
+          </td>
+        </tr>
       </tbody>
     </table>
 
+
+    {% if data['hasStarted'] =='yes' %}
+      <a href="tasklist" class="govuk-button" data-module="govuk-button">
+        Continue
+      </a>
+    {% else %}
       <a href="tasklist" class="govuk-button" data-module="govuk-button">
         Start task
       </a>
+    {% endif %}
+
+    
       
-    <p><a href="agent-task-new-reject-00">I cannnot do this task</a></p>
+
+
+    <p><a href="agent-task-open-reject-00">I cannnot do this task</a></p>
   </div>
 </div>
 
