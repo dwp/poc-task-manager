@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block header %}
-  {% include "includes/internal-header.html" %}
+  {% include "includes/internal-header-has.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -49,7 +49,7 @@
         <td class="govuk-table__cell"><strong class="govuk-tag">Active</strong></td>
         <td class="govuk-table__cell">
           <div class="govuk-button-group">
-            <a href="agent-open-tasks-02" class="govuk-button" data-module="govuk-button">
+            <a href="agent-open-tasks-02?hasStarted=no" class="govuk-button" data-module="govuk-button">
               Complete task
             </a>
             <a class="govuk-link" href="agent-task-open-reject-00">I cannot do this task</a>
