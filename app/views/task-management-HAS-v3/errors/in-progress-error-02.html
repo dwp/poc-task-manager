@@ -1,0 +1,109 @@
+
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+    Get a new task
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header-has-errors.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "./start"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Tasks in progress</h1>
+
+    {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Failed to reject task",
+            href: "#error-row"
+          }
+               ]
+      }) }}
+    
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-grid-row" style=" margin-left:0px; ">
+
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Claimant name</th>
+                <th scope="col" class="govuk-table__header">Referral date</th>
+                <th scope="col" class="govuk-table__header">Task</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+                <th scope="col" class="govuk-table__header">Actions</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Jack Ryan</a></th>
+                <td class="govuk-table__cell">20 October 2023</td>
+                <td class="govuk-table__cell">Review medical evidence (PIP)</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag">Active</strong></td>
+                <td class="govuk-table__cell">
+                <div class="govuk-button-group">
+                    <button class="govuk-button" data-module="govuk-button" style="width:146px">
+                    Complete task
+                    </button>
+                    <a class="govuk-link" href="#">I cannot do this task</a>
+                </div>
+            </tr>
+            
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Jane Doe</a></th>
+                <td class="govuk-table__cell">22 October 2023</td>
+                <td class="govuk-table__cell">Review medical evidence (ESA)</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Allocated</strong></td>
+                <td class="govuk-table__cell">
+                <div class="govuk-button-group">
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="width:146px">
+                    Start task
+                    </button>
+                    <a class="govuk-link" href="#">I cannot do this task</a>
+                </div>
+            </tr>
+            
+            
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">June Miller</a></th>
+                <td class="govuk-table__cell">27 October 2023</td>
+                <td class="govuk-table__cell">Review medical evidence (PIP)</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">Allocated</strong></td>
+                <td class="govuk-table__cell">
+                <div class="govuk-button-group">
+                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="width:146px">
+                    Start task
+                    </button>
+                    <a class="govuk-link" href="#">I cannot do this task</a>
+                </div>
+            </tr>
+            
+            </tbody>
+        </table>
+
+       
+
+    </div>
+
+  </div>  
+</div>
+
+{% endblock %}
