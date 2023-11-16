@@ -2,17 +2,17 @@
 
 
 {% block pageTitle %}
-    Info - No Tasks available
+    Prototype page title
 {% endblock %}
 
 {% block header %}
-  {% include "includes/internal-header-has.html" %}
+  {% include "includes/internal-header-has-errors.html" %}
 {% endblock %}
 
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "javascript:window.history.back()"
+  href: "./start"
 }) }}
 {% endblock %}
 
@@ -23,19 +23,15 @@
     <h1 class="govuk-heading-l">Tasks</h1>
 
 
-    {% set html %}
-
-      <p class="govuk-notification-banner__heading">
-        There are no tasks currently available.
-        <br>
-        <a class="govuk-notification-banner__link" href="#">TBC - Provide onward action</a>.
-      </p>
-
-  {% endset %}
-
-    {{ govukNotificationBanner({
-      html: html
-   }) }}
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: [
+        {
+          text: "Task doesn't exist for details",
+          href: "#FME-get-new-task-UC"
+        }
+             ]
+    }) }}
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -43,12 +39,13 @@
           Review further medical evidence (ESA)
         </h2>
         <p class="govuk-body govuk-!-font-size-24">
-          <a href="review-task-00" disabled="disabled" aria-disabled="true" class="govuk-link disabled-link"><b>Get next task</b></a>
+          <a href="../review-task-00" class="govuk-link
+          "><b>Get next task</b></a>
         </p>
       </div>
       <div class="govuk-grid-column-one-third">
         <h3 class="govuk-heading-m">
-          0
+          4
         </h3>
         <p class="govuk-body govuk-!-font-size-24">total tasks</p>
       </div>
@@ -63,12 +60,13 @@
           Review further medical evidence (PIP)
         </h2>
         <p class="govuk-body govuk-!-font-size-24">
-          <a href="#" disabled="disabled" aria-disabled="true" class="govuk-link disabled-link"><b>Get next task</b></a>
+          <a href="#" class="govuk-link
+          "><b>Get next task</b></a>
         </p>
       </div>
       <div class="govuk-grid-column-one-third">
         <h3 class="govuk-heading-m">
-          0
+          14
         </h3>
         <p class="govuk-body govuk-!-font-size-24">total tasks</p>
       </div>
@@ -80,17 +78,20 @@
 
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">
+      <div class="govuk-grid-column-two-thirds" style="padding-left: 15px; margin-left:0px; border-left: 5px solid #d4351c;">
+        <h2 class="govuk-heading-m" id="FME-get-new-task-UC">
           Review further medical evidence (UC)
         </h2>
+        <p class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span>Task doesn't exist for details, try again
+        </p>
         <p class="govuk-body govuk-!-font-size-24">
-          <a href="#" disabled="disabled" aria-disabled="true" class="govuk-link disabled-link"><b>Get next task</b></a>
+          <a href="#" class="govuk-link"><b>Get next task</b></a>
         </p>
       </div>
       <div class="govuk-grid-column-one-third">
         <h3 class="govuk-heading-m">
-          0
+          10
         </h3>
         <p class="govuk-body govuk-!-font-size-24">total tasks</p>
       </div>

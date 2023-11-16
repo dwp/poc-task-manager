@@ -3,12 +3,12 @@
 
 
 {% block pageTitle %}
-Error - Accepting task
+Error - Rejecting task
 {% endblock %}
 
 {% block header %}
 
-  {% include "includes/internal-header-has.html" %}
+  {% include "includes/internal-header-has-errors.html" %}
 
 
 {% endblock %}
@@ -16,7 +16,7 @@ Error - Accepting task
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "javascript:window.history.back()"
+  href: "./start"
 }) }}
 {% endblock %}
 
@@ -30,8 +30,8 @@ Error - Accepting task
       titleText: "There is a problem",
       errorList: [
         {
-          text: "Failed to accept task",
-          href: "#start-task"
+          text: "Failed to reject task",
+          href: "#reject-task"
         }
              ]
     }) }}
@@ -75,14 +75,15 @@ Error - Accepting task
       </tbody>
     </table>
 
-    <p class="govuk-error-message">
-      <span class="govuk-visually-hidden">Error:</span> Failed to accept task, try again
-    </p>
+   
       <a id="start-task" href="tasklist-01" class="govuk-button" data-module="govuk-button">
         Start task
       </a>
       
-    <p><a href="agent-task-1-00">I cannnot do this task</a></p>
+      <p class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Failed to reject task, try again
+      </p>
+    <p><a id="reject-task" href="agent-task-1-00">I cannnot do this task</a></p>
   </div>
   </div>
 </div>

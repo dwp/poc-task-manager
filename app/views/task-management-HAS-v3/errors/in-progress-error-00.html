@@ -1,0 +1,70 @@
+
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+    Get a new task
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header-has-errors.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "./start"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Tasks in progress</h1>
+
+    {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: [
+          {
+            text: "Failed to load task list",
+            href: "#table-task-list"
+          }
+               ]
+      }) }}
+    
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-grid-row" id="table-task-list" style="padding-left: 15px; margin-left:0px; border-left: 5px solid #d4351c;">
+
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Claimant name</th>
+                <th scope="col" class="govuk-table__header">Referral date</th>
+                <th scope="col" class="govuk-table__header">Task</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+                <th scope="col" class="govuk-table__header">Actions</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            
+            
+            
+            </tbody>
+        </table>
+
+        <p class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Failed to load task list
+          </p>
+
+    </div>
+
+  </div>  
+</div>
+
+{% endblock %}
