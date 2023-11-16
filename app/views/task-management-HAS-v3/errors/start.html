@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+    Info & Errors
+{% endblock %}
+
+{% block header %}
+  {% include "includes/internal-header-has-errors.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "../"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Info & Errors - Examples</h1>
+    <br>  
+   <h2 class="govuk-heading-m">Get new task</h2>
+   
+    <ul class="govuk-list">
+      <li>
+      <a href="./task-error-00">No Tasks available</a>
+      </li>
+      <li>
+        <a href="./task-error-01">Failed to get task</a>
+      </li>
+    </ul>
+    <br/>
+
+    <h2 class="govuk-heading-m">Get/ review task</h2>
+    <ul class="govuk-list">
+      <li>
+          <a href="./error-review-redirect?error=tde">Task doesn't exist for details</a>
+      </li>
+      <li>
+        <a href="./error-review-redirect?error=br">Bad request - failed to process task details</a>
+      </li>
+      <li>
+        <a href="./error-review-redirect?error=ftgi">Failed to get info from referrals API</a>
+      </li>
+    </ul>  
+     <br>
+
+    
+    <h2 class="govuk-heading-m">Review task</h2>
+    <ul class="govuk-list">
+      <li>
+          <a href="./review-error-00">Failed to accept task</a>
+          </li>
+          <li>
+            <a href="./review-error-01">Failed to reject task</a>
+          </li>
+     </ul>  
+     <br>
+
+
+    <h2 class="govuk-heading-m">Tasks in progress</h2>
+    <ul class="govuk-list">
+      <li>
+        <a href="./in-progress-error-00">Failed to load list</a>
+        </li>
+        <li>
+          <a href="./in-progress-error-01">Failed to complete task </a>
+        </li>
+        <li>
+          <a href="./in-progress-error-02">Failed to reject task </a>
+        </li>
+        <li>
+          <a href="./progress-review-redirect">Failed to get info from referral API</a>
+        </li>
+    </ul>
+
+  </div>
+</div>
+
+{% endblock %}
