@@ -96,6 +96,9 @@ Task flow - 02
 
 {% block scripts %}
 
+
+{% if data['error'] == 'ftgi' %}
+
   <script>
 
     setTimeout(function() {
@@ -105,7 +108,18 @@ Task flow - 02
 
   </script>
 
+{% elseif data['error'] == 'ftl' %}
 
+<script>
+
+  setTimeout(function() {
+
+      window.location = "./in-progress-error-04";
+  }, 1200)
+
+</script>
+
+{% endif %}
     
 {% endblock %}
 
