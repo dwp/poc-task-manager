@@ -79,23 +79,10 @@ Task flow - 02
       </tbody>
     </table>
 
-
-    {% if data['hasStarted'] =='yes' %}
-      <a href="tasklist" class="govuk-button" data-module="govuk-button">
-        Continue
-      </a>
-    {% else %}
       <a href="tasklist" class="govuk-button" data-module="govuk-button">
         Start task
       </a>
-    {% endif %}
-
-    
-      {% if hasStarted == 'yes' %}
-        <p><a href="#">I cannot do this task</a></p>
-      {% else %}
-        <p><a href="#">I cannot do this task</a></p>
-      {% endif %}
+        <p><a href="get-new-task?isRejected=yes">I cannot do this task</a></p>
       
   </div>
 </div>
