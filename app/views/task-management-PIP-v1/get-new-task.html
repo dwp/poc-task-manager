@@ -18,6 +18,23 @@
 
 {% block content %}
 
+{% if data['isRejected'] == 'yes' %}
+
+    {% set html %}
+      <h3 class="govuk-notification-banner__heading">
+        Task returned to queue
+      </h3>
+      
+      {% endset %}  
+
+      {{ govukNotificationBanner({
+        html: html,
+        type: "success"
+      }) }}
+
+
+ {% endif %}
+
     <h1 class="govuk-heading-l">Tasks</h1>
 
     <div class="govuk-grid-row">

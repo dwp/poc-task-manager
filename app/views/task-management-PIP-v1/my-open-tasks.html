@@ -22,6 +22,24 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
+
+    {% if data['isOpenRejected'] == 'yes' %}
+
+    {% set html %}
+      <h3 class="govuk-notification-banner__heading">
+        Task returned to queue
+      </h3>
+      
+      {% endset %}  
+
+      {{ govukNotificationBanner({
+        html: html,
+        type: "success"
+      }) }}
+
+
+ {% endif %}
+
     <h1 class="govuk-heading-l">My open tasks</h1>
 
     
@@ -55,8 +73,9 @@
               <a href="#" class="govuk-button" data-module="govuk-button">
                 Complete task
               </a>
-              <a class="govuk-link" href="#">I cannot do this task</a>
+              <a class="govuk-link" href="?isOpenRejected=yes&hasStarted=no">I cannot do this task</a>
             </div>
+            </td>
         </tr>
         
       </tbody>
@@ -66,7 +85,7 @@
     
     <p>You have no tasks in progress.</p>
 
-    <p>You can <a href="agent-task-new-00">get a new task</a>.</p>
+    <p>You can <a href="get-new-task?isRejected=no">get a new task</a>.</p>
     
     {%  endif %}
 
