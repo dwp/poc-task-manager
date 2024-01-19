@@ -25,36 +25,7 @@ Task screen/s
                 <li class="moj-primary-navigation__item" style="border-bottom: 5px solid #1d70b8;"> 
                   <a class="moj-primary-navigation__link" aria-current="page" href="#">Tasks to do</a>
                 </span>  </li>
-      
-                {# <li class="moj-primary-navigation__item">
-                 
-                 
-                  {% if  data['task1']   == 'Yes' %}
-                  
-                  <a class="moj-primary-navigation__link" href="#">Claimant documents</a>
-
-                  {% else %}
-                  <a class="moj-primary-navigation__link" href="#">Claimant documents</a>
-                  {% endif %} 
-
-                </li>
-      
-                <li class="moj-primary-navigation__item">
-
-                  {% if  data['task2']   == 'Yes' %}
-
-                  <a class="moj-primary-navigation__link" href="#">HCP review</a>
-                  {% else %}
-                  <a class="moj-primary-navigation__link" href="#">HCP review</a>
-
-                  {% endif %} 
-
-                </li>
-
-                <li class="moj-primary-navigation__item">
-                  <a class="moj-primary-navigation__link" href="#">Timeline</a>
-                </li> #}
-
+    
 
               </ul>
       
@@ -87,20 +58,20 @@ Task screen/s
         Tasks to complete
       </h1>
 
-      <p>Medical evidence received. The following tasks now need to be reviewed.</p>
+      <p>Determine if Health Assessment Required... Agent work to be carried out</p>
     
 
       <ol class="govuk-prototype-kit-task-list">
         <li>
           <h2 class="govuk-prototype-kit-task-list__section">
-            <span class="govuk-prototype-kit-task-list__section-number">1. </span> Task step <!-- {{ data['task1'] }}   -->
+            <span class="govuk-prototype-kit-task-list__section-number">1. </span> Task step
           </h2>
           <ul class="govuk-prototype-kit-task-list__items">
             <li class="govuk-prototype-kit-task-list__item">
 
               <span class="govuk-prototype-kit-task-list__task-name">
                 <a href="#" aria-describedby="eligibility-status">
-                 Subtask 1     
+                 Subtask 1.1     
 
                 </a>
               </span>
@@ -113,7 +84,7 @@ Task screen/s
 
               <span class="govuk-prototype-kit-task-list__task-name">
                 <a href="#" aria-describedby="eligibility-status">
-                 Subtask 2     
+                 Subtask 1.2     
 
                 </a>
               </span>
@@ -125,37 +96,23 @@ Task screen/s
           </ul>
         </li>
 
-        {# <li>
+        <li>
           <h2 class="govuk-prototype-kit-task-list__section">
-            <span class="govuk-prototype-kit-task-list__section-number">2. </span> Update HCP review
+            <span class="govuk-prototype-kit-task-list__section-number">2. </span> Task step
           </h2>
           <ul class="govuk-prototype-kit-task-list__items">
            
-            {% if  data['task2']   == 'Yes' %}
-
-            <li class="govuk-prototype-kit-task-list__item">
-              <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="other-services/hcp-view-added" aria-describedby="contact-details-status">
-                  View and add to HCP review
-                </a>
-              </span>
-          
-          
             
-
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-              {% else %}
 
               <li class="govuk-prototype-kit-task-list__item">
                 <span class="govuk-prototype-kit-task-list__task-name">
                   <a href="#" aria-describedby="contact-details-status">
-                    View and add to HCP review
+                    Subtask 2.1
                   </a>
                 </span>
 
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
 
-              {% endif %} 
             
             </li>
            
@@ -164,64 +121,21 @@ Task screen/s
 
         <li>
           <h2 class="govuk-prototype-kit-task-list__section">
-            <span class="govuk-prototype-kit-task-list__section-number">3. </span> Update timeline
+            <span class="govuk-prototype-kit-task-list__section-number">3. </span> Task step
           </h2>
           <ul class="govuk-prototype-kit-task-list__items">
             <li class="govuk-prototype-kit-task-list__item">
 
-
-              {% if (data['task1']   == 'Yes') and (data['task2']   == 'Yes') %}
-
-             
-
               <span class="govuk-prototype-kit-task-list__task-name">
-                <a href="other-services/timeline-view" aria-describedby="contact-details-status">
-                  Log medical evidence reviewed
-                </a>
-              </span>   {% else %}
-
-              <span class="govuk-prototype-kit-task-list__task-name">
-                Log medical evidence reviewed
+                Subtask 3.1
               </span>
-
-              {% endif %} 
-
-
-             
-              {% if (data['task1']   == 'Yes') and (data['task2']   == 'Yes') and (data['task3']  == 'Yes') %}
-
-              <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
-              {% endif %} 
-
-              {% if (data['task1']   == 'Yes') and (data['task2']   == 'Yes') and (data['task3']  != 'Yes') %}
-
-             
-              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-
-              {% endif %} 
-
-              {% if (data['task1']   != 'Yes') or (data['task2']   != 'Yes')  %}
 
 
               <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
 
-              {% endif %} 
-            </li> #}
+            </li>
           </ul>
 
-
-        
-  
-               
-  
-               
-                {% if (data['task1']   == 'Yes') and (data['task2']   == 'Yes') and (data['task3']  == 'Yes')  %}
-   
-                <a href="select-status"> 
-                <button class="govuk-button" data-module="govuk-button">Change status </button>
-              </a>
-
-                {% endif %} 
               </li>
             </ul>
 
@@ -231,13 +145,13 @@ Task screen/s
         </li>
       </ol>
 
-<!--
-      <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
-      <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
-      <strong class="govuk-tag govuk-tag--blue govuk-prototype-kit-task-list__tag" id="contact-details-status">In progress</strong>
-      <strong class="govuk-tag govuk-prototype-kit-task-list__tag" id="eligibility-status">Completed</strong>
 
-    -->
+      <p class="govuk-body-s">👇🏼👇🏼👇🏼 Conditionally rendered when applicable</p>
+      <h2 class="govuk-heading-l">You have completed all subtasks...</h2>
+      <p class="govuk-body">You can complete the processing of this task</p>
+      <a href="#" class="govuk-button" disabled="disabled" aria-disabled="">Complete task</a>
+      <p class="govuk-body-s">☝🏼☝🏼☝🏼 Conditionally rendered when applicable</p>
+
     </div>
 
     {# <div class="govuk-grid-column-one-third" >
