@@ -68,31 +68,44 @@ PIP MyHomepPage
 
             {% endif %}
 
-            <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="#">Make an outbound call</a></p>
-            <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="#">Find someone</a></p>
+            <p class="govuk-!-margin-bottom-2">
+              <a class="govuk-body govuk-!-font-size-19" href="#">
+                Make an outbound call
+              </a>
+            </p>
 
-            {% if data["request-access"] == "1" %}
-            <p class="govuk-!-margin-bottom-1">
-              {{govukTag({
-                  text: "New",
-                  classes: "govuk-tag--green"
-                })}} &hairsp;
-                 <a class="govuk-body govuk-!-font-size-19" href="#">Disputes</a></p>
-              {% else %}
-            {% endif %}
+            <p class="govuk-!-margin-bottom-2">
+              <a class="govuk-body govuk-!-font-size-19" href="#">
+                Find someone
+              </a>
+            </p>
+
+            
           </div>
 
           {% endif %}
 
           <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
-            <p class="govuk-body govuk-!-font-weight-bold">Services</p>
-            <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="#">View service statistics</a></p>
-            <p class="govuk-!-margin-bottom-6"><a class="govuk-body govuk-!-font-size-19" href="#">Request access</a></p>
 
+            <p class="govuk-body govuk-!-font-weight-bold">
+              Services
+            </p>
+            
+            <p class="govuk-!-margin-bottom-2">
+              <a class="govuk-body govuk-!-font-size-19" href="#">
+                View service statistics
+              </a>
+            </p>
+            
+            <p class="govuk-!-margin-bottom-6">
+              <a class="govuk-body govuk-!-font-size-19" href="#">
+                Request access
+              </a>
+            </p>
+          
           </div>
         </div>
 
                
- 
 
 {% endblock %}
