@@ -12,7 +12,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
   text: "Back",
-  href: "javascript:window.history.back()"
+  href: "flow-start"
 }) }}
 {% endblock %}
 
@@ -20,7 +20,7 @@
 
 {% if data['isRejected'] == 'yes' %}
 
-    {% set html %}
+    {% set htmlReturned %}
       <h3 class="govuk-notification-banner__heading">
         Task returned to queue
       </h3>
@@ -28,10 +28,27 @@
       {% endset %}  
 
       {{ govukNotificationBanner({
-        html: html,
+        html: htmlReturned,
         type: "success"
       }) }}
 
+
+ {% endif %}
+
+
+ {% if data['isCompleted'] == 'yes' %}
+
+  {% set htmlCompleted %}
+  <h3 class="govuk-notification-banner__heading">
+    Task completed successfully
+  </h3>
+  
+  {% endset %}
+
+  {{ govukNotificationBanner({
+  html: htmlCompleted,
+  type: "success"
+  }) }}
 
  {% endif %}
 
@@ -43,55 +60,16 @@
           Determine if Health Assessment Required
         </h2>
         <p class="govuk-body-l">
-          <a href="./review-task" class="govuk-link"><b>Get next task</b></a>
+          <a href="./review-task?hasStarted=no" class="govuk-link"><b>Get next task</b></a>
         </p>
       </div>
       <div class="govuk-grid-column-one-third">
         <h3 class="govuk-heading-l">
-          7
+          {{ '6' if data['isCompleted'] == 'yes' else '7' }}
           <p class="govuk-body govuk-!-font-size-24">total tasks</p>
         </h3>
       </div>
     </div>
-
-    {# <hr>
-    <br><br>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">
-         PIP TASK NAME
-        </h2>
-          <p class="govuk-body-l">
-            <a href="#" class="govuk-link"><b>Get next task</b></a>
-          </p>
-      </div>
-      <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-l">
-          24
-          <p class="govuk-body govuk-!-font-size-24">total tasks</p>
-        </h3>
-      </div>
-    </div>
-    <hr>
-    <br><br>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">
-         PIP TASK NAME
-        </h2>
-          <p class="govuk-body-l">
-            <a href="#" disabled="disabled" aria-disabled="true" class="govuk-link disabled-link"><b>Get next task</b></a>
-          </p>
-      </div>
-      <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-l">
-          0
-          <p class="govuk-body govuk-!-font-size-24">total tasks</p>
-        </h3>
-      </div>
-    </div> #}
 
     <br>
 
