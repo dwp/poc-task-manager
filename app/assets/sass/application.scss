@@ -504,6 +504,24 @@ a:visited {
   //.govuk-header__link:link, .govuk-header__link:visited {
   // font-weight: 200;
   //}
+
+  .PIP_header_nav{
+    font-family: "GDS Transport", helvetica, arial, sans-serif;
+    font-weight:600;
+    float:right;
+    display:block;
+  }
+
+  .PIP_header_nav ul{
+    margin:0;
+  }
+
+  .PIP_header_nav li{
+    box-sizing: border-box;
+    display:inline-block;
+    height:40px;
+    padding:10px;
+  }
   
   .govuk-header__link--homepage {
     font-weight: 700!important;
