@@ -40,7 +40,7 @@
 
  {% endif %}
 
-    <h1 class="govuk-heading-l">My open tasks</h1>
+    <h1 class="govuk-heading-l">{{ 'My open tasks'  if data['hasStarted'] == 'yes' else 'You have no open tasks'}}</h1>
 
     
     </div>
@@ -83,9 +83,9 @@
 
     {%  else %}
     
-    <p>You have no tasks in progress.</p>
+    <p>Tasks will only be paused for 2 days before they will be assigned to someone else.</p>
 
-    <p>You can <a href="get-new-task?isRejected=no&isCompleted=no">get a new task</a>.</p>
+    <p>You can start <a href="get-new-task?isRejected=no&isCompleted=no">processing a new application</a>.</p>
     
     {%  endif %}
 
