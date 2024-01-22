@@ -64,7 +64,7 @@
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><a href="review-task.html?hasStarted=yes">Jane Doe</a></th>
+          <td class="govuk-table__cell"><a href="tasklist.html?hasStarted=yes">Jane Doe</a></th>
           <td class="govuk-table__cell">9 November 2023</td>
           <td class="govuk-table__cell">Determine if Health Assessment Required</td>
           <td class="govuk-table__cell"><strong class="govuk-tag">Active</strong></td>
@@ -73,7 +73,7 @@
               {# <a href="#" class="govuk-button" data-module="govuk-button">
                 Complete task
               </a> #}
-              <a class="govuk-link" href="?isOpenRejected=yes&hasStarted=no">I cannot do this task</a>
+              <a class="govuk-link" href="?isOpenRejected=yes&hasStarted=no&isCompleted=no">I cannot do this task</a>
             {# </div> #}
             </td>
         </tr>
@@ -85,7 +85,7 @@
     
     <p>You have no tasks in progress.</p>
 
-    <p>You can <a href="get-new-task?isRejected=no">get a new task</a>.</p>
+    <p>You can <a href="get-new-task?isRejected=no&isCompleted=no">get a new task</a>.</p>
     
     {%  endif %}
 
