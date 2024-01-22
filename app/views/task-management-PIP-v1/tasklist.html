@@ -51,7 +51,7 @@ Task screen/s
   <div class="govuk-grid-row" style="margin-top: -40px;">
     <div class="govuk-grid-column-two-thirds">
 
-      <a href="my-open-tasks?hasStarted=yes" class="govuk-back-link" style="margin-bottom:40px;">Back</a>
+      <a href="my-open-tasks?hasStarted=yes&isOpenRejected=no" class="govuk-back-link" style="margin-bottom:40px;">Back</a>
 
 
       <h1 class="govuk-heading-l">
@@ -145,12 +145,9 @@ Task screen/s
         </li>
       </ol>
 
-
-      <p class="govuk-body-s">👇🏼👇🏼👇🏼 Conditionally rendered when applicable</p>
       <h2 class="govuk-heading-l">You have completed all subtasks...</h2>
       <p class="govuk-body">You can complete the processing of this task</p>
-      <a href="#" class="govuk-button" disabled="disabled" aria-disabled="">Complete task</a>
-      <p class="govuk-body-s">☝🏼☝🏼☝🏼 Conditionally rendered when applicable</p>
+      <a href="get-new-task?isCompleted=yes&isRejected=no" class="govuk-button">Complete task</a>
 
     </div>
 
