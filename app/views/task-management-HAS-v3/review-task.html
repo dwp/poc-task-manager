@@ -92,7 +92,7 @@ Task flow - 02
     {% endif %}
 
     
-      {% if hasStarted == 'yes' %}
+      {% if data['hasStarted'] == 'yes' %}
         <p><a href="agent-task-open-reject-00">I cannot do this task</a></p>
       {% else %}
         <p><a href="agent-task-new-reject-00">I cannot do this task</a></p>
