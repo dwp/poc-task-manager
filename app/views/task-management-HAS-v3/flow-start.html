@@ -22,27 +22,7 @@ HAS Entry point
                
   <h1 class="govuk-heading-l">Main menu</h1>
    
-  <div class="dwp-card dwp-card--clickable">
-    <div class="dwp-card__content">
-      <h2 class="dwp-card__heading dwp-heading-m" id="filter">
-        <a class="dwp-card__link govuk-link" href="agent-task-new-00">Get a task</a>
-      </h2>
-      <p class="dwp-card__description">Get a new task to start processing</p>
-    </div>
-  </div>
   
-  <div class="dwp-card dwp-card--clickable">
-    <div class="dwp-card__content">
-      <h2 class="dwp-card__heading dwp-heading-m" id="filter">
-        {% if  data['toComplete']   != 'yes' %}
-          <a class="dwp-card__link govuk-link" href="agent-open-tasks-00">View my open tasks</a>
-        {% else %}
-          <a class="dwp-card__link govuk-link" href="agent-open-tasks-01">View my open tasks</a>
-        {% endif %} 
-      </h2>
-      <p class="dwp-card__description">View tasks that are currently allocated to you</p>
-    </div>
-  </div>
 
   <div class="dwp-card dwp-card--clickable">
     <div class="dwp-card__content">
@@ -123,6 +103,30 @@ HAS Entry point
         <a class="dwp-card__link govuk-link" href="#">Changes to PIP referrals</a>
       </h2>
       <p class="dwp-card__description">Confirm new referrals and view alerts for supporting evidence, documents and changes of circumstances added to existing referrals</p>
+    </div>
+  </div>
+
+
+  <div class="dwp-card dwp-card--clickable">
+    <div class="dwp-card__content">
+      <h2 class="dwp-card__heading dwp-heading-m" id="filter">
+        <a class="dwp-card__link govuk-link" href="agent-task-new-00">Get a task</a>
+      </h2>
+      <p class="dwp-card__description">Get a new task to start processing</p>
+    </div>
+  </div>
+  
+  
+  <div class="dwp-card dwp-card--clickable">
+    <div class="dwp-card__content">
+      <h2 class="dwp-card__heading dwp-heading-m" id="filter">
+        {% if  data['toComplete']   != 'yes' %}
+          <a class="dwp-card__link govuk-link" href="agent-open-tasks-00">View my open tasks</a>
+        {% else %}
+          <a class="dwp-card__link govuk-link" href="agent-open-tasks-01">View my open tasks</a>
+        {% endif %} 
+      </h2>
+      <p class="dwp-card__description">View tasks that are currently allocated to you</p>
     </div>
   </div>
 
