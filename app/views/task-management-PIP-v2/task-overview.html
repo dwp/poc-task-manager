@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Task flow - 02
+{% endblock %}
+
+{% block header %}
+
+  {% include "includes/internal-header-pip.html" %}
+
+
+{% endblock %}
+
+{% block beforeContent %}
+
+{% if data['hasStarted'] =='yes' %}
+
+    {{ govukBackLink({
+    text: "Back",
+    href: "my-open-tasks"
+    }) }}
+
+{% endif %}
+    
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" >
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Task overview</h1>
+
+    <table class="govuk-table">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Tasks to do</th>
+          <td class="govuk-table__cell">Determine if Health Assessment Required</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Claimant name</th>
+          <td class="govuk-table__cell">Jane Doe</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Referral date</th>
+          <td class="govuk-table__cell">9 November 2023</td>
+        </tr>
+        {# <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Benefit type</th>
+          <td class="govuk-table__cell">PIP</td>
+        </tr> #}
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">End of life</th>
+          <td class="govuk-table__cell">No</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Mental health condition
+          </th>
+          <td class="govuk-table__cell">Yes</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Task descripton</th>
+          <td class="govuk-table__cell">
+            TBC - Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos hic dolor temporibus nihil. 
+          </td>
+        </tr>
+        
+        {# <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Document ID</th>
+          <td class="govuk-table__cell">
+            001234-234500-00232323
+          </td>
+        </tr> #}
+      </tbody>
+    </table>
+
+      <a href="tasklist?hasStarted=yes" class="govuk-button" data-module="govuk-button">
+        Start task
+      </a>
+        <p><a href="get-new-task?isRejected=yes&isCompleted=no">I cannot do this task</a></p>
+      
+  </div>
+</div>
+
+{% endblock %}

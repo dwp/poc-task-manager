@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+My open tasks
+{% endblock %}
+
+{% block header %}
+{% include "includes/internal-header-pip.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBackLink({
+text: "Back",
+href: "flow-start"
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    {% if data['isOpenRejected'] == 'yes' %}
+
+    {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      Task returned to queue
+    </h3>
+
+    {% endset %}
+
+    {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+    }) }}
+
+    {% endif %}
+
+    <h1 class="govuk-heading-l">{{ 'My open tasks' if data['hasStarted'] == 'yes' else 'You have no open tasks'}}</h1>
+
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+    {% if data['hasStarted'] == 'yes' %}
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Claimant name</th>
+          <th scope="col" class="govuk-table__header">Referral date</th>
+          <th scope="col" class="govuk-table__header">Task</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"><a href="tasklist.html?hasStarted=yes">Jane Doe</a></th>
+          <td class="govuk-table__cell">9 November 2023</td>
+          <td class="govuk-table__cell">Determine if Health Assessment Required</td>
+          <td class="govuk-table__cell"><strong class="govuk-tag">Active</strong></td>
+          <td class="govuk-table__cell">
+            {# <div class="govuk-button-group"> #}
+              {# <a href="#" class="govuk-button" data-module="govuk-button">
+                Complete task
+              </a> #}
+              <a class="govuk-link" href="?isOpenRejected=yes&hasStarted=no&isCompleted=no">I cannot do this task</a>
+              {#
+            </div> #}
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    {% else %}
+
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Tasks will only be paused for 2 days before they
+      will<br>be assigned to someone else.</p>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You can start <a
+        class="govuk-body govuk-!-font-size-19" href="application-selector">processing a new application</a>.</p>
+    {% endif %}
+
+
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
