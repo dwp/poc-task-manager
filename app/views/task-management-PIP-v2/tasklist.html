@@ -1,0 +1,167 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+Task screen/s
+{% endblock %}
+
+{% block header %}
+
+{% include "includes/internal-header-pip.html" %}
+
+
+  <main>
+    <header class="moj-primary-navigation">
+    <div class="govuk-width-container ">
+      <div class="moj-primary-navigation">
+
+        <div class="moj-primary-navigation__container">
+      
+          <div class="moj-primary-navigation__nav">
+      
+            <nav class="moj-primary-navigation" aria-label="Primary navigation">
+      
+              <ul class="moj-primary-navigation__list">
+                <li class="moj-primary-navigation__item" style="border-bottom: 5px solid #1d70b8;"> 
+                  <a class="moj-primary-navigation__link" aria-current="page" href="#">Tasks to do</a>
+                </span>  </li>
+    
+
+              </ul>
+      
+            </nav>
+      
+          </div>
+        </div>
+      
+      </div>
+      
+
+        
+    </div>
+    </header>
+    </main> 
+
+
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row" style="margin-top: -40px;">
+    <div class="govuk-grid-column-two-thirds">
+
+      <a href="my-open-tasks?hasStarted=yes&isOpenRejected=no" class="govuk-back-link" style="margin-bottom:40px;">Back</a>
+
+
+      <h1 class="govuk-heading-l">
+        {{ "Process application" if data['task'] == 'process' else "Confirm lay eligibility criteria" }}
+      </h1>
+
+      <p>AGENT WORK TO BE CARRIED OUT</p>
+    
+
+      <ol class="govuk-prototype-kit-task-list">
+        <li>
+          <h2 class="govuk-prototype-kit-task-list__section">
+            <span class="govuk-prototype-kit-task-list__section-number">1. </span> Task step
+          </h2>
+          <ul class="govuk-prototype-kit-task-list__items">
+            <li class="govuk-prototype-kit-task-list__item">
+
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                 Subtask 1.1     
+
+                </a>
+              </span>
+
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+
+            </li>
+
+            <li class="govuk-prototype-kit-task-list__item">
+
+              <span class="govuk-prototype-kit-task-list__task-name">
+                <a href="#" aria-describedby="eligibility-status">
+                 Subtask 1.2     
+
+                </a>
+              </span>
+
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+
+            </li>
+           
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="govuk-prototype-kit-task-list__section">
+            <span class="govuk-prototype-kit-task-list__section-number">2. </span> Task step
+          </h2>
+          <ul class="govuk-prototype-kit-task-list__items">
+           
+            
+
+              <li class="govuk-prototype-kit-task-list__item">
+                <span class="govuk-prototype-kit-task-list__task-name">
+                  <a href="#" aria-describedby="contact-details-status">
+                    Subtask 2.1
+                  </a>
+                </span>
+
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="list-convictions-status">Not started</strong>
+
+            
+            </li>
+           
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="govuk-prototype-kit-task-list__section">
+            <span class="govuk-prototype-kit-task-list__section-number">3. </span> Task step
+          </h2>
+          <ul class="govuk-prototype-kit-task-list__items">
+            <li class="govuk-prototype-kit-task-list__item">
+
+              <span class="govuk-prototype-kit-task-list__task-name">
+                Subtask 3.1
+              </span>
+
+
+              <strong class="govuk-tag govuk-tag--grey govuk-prototype-kit-task-list__tag" id="submit-pay-status">Cannot start yet</strong>
+
+            </li>
+          </ul>
+
+              </li>
+            </ul>
+
+     
+
+
+        </li>
+      </ol>
+
+      <h2 class="govuk-heading-l">You have completed all subtasks...</h2>
+      <p class="govuk-body">You can complete the processing of this task</p>
+      <a href="pip-home?isCompleted=yes&isRejected=no" class="govuk-button">Complete task</a>
+
+    </div>
+
+    {# <div class="govuk-grid-column-one-third" >
+
+      <h3 class="govuk-heading-m">What you can do next</h3>
+      <ul class="govuk-list">
+         
+
+      <li class="govuk-!-margin-bottom-2"><a href="move-task">Move this case back to task queue </a></li> 
+          
+       
+      
+    </div> #}
+  </div>
+
+{% endblock %}
