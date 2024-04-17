@@ -11,7 +11,7 @@ My open tasks
 {% block beforeContent %}
 {{ govukBackLink({
 text: "Back",
-href: "flow-start"
+href: "pip-home?isCompleted=no&isRejected=no"
 }) }}
 {% endblock %}
 
@@ -21,7 +21,7 @@ href: "flow-start"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    {% if data['isOpenRejected'] == 'yes' %}
+    {# {% if data['isOpenRejected'] == 'yes' %}
 
     {% set html %}
     <h3 class="govuk-notification-banner__heading">
@@ -35,16 +35,24 @@ href: "flow-start"
     type: "success"
     }) }}
 
+    {% endif %} #}
+
+    {% if data['isCompleted'] == 'yes' %}
+    {% include "../includes/success-banner" %}
+
+    {% elif data['isRejected'] == 'yes'%}
+    {% include "../includes/returned-banner" %}
+
     {% endif %}
 
     <h1 class="govuk-heading-l">{{ 'My open tasks' if data['hasStarted'] == 'yes' else 'You have no open tasks'}}</h1>
 
 
-<!-- ================================== -->
+    <!-- ================================== -->
 
-<!-- WHAT OPTIONS DO WE PRESENT HERE?  -->
+    <!-- WHAT OPTIONS DO WE PRESENT HERE?  -->
 
-<!-- ================================== -->
+    <!-- ================================== -->
 
 
   </div>
@@ -90,8 +98,11 @@ href: "flow-start"
 
     <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-2">Tasks will only be paused for 2 days before they
       will<br>be assigned to someone else.</p>
-    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You can start <a
-        class="govuk-body govuk-!-font-size-19" href="application-selector">processing a new application</a>.</p>
+    <br>
+    <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">You can <a
+        class="govuk-body govuk-!-font-size-19" href="task-overview?task=eligibility">check eligibility</a> or
+      <a class="govuk-body govuk-!-font-size-19" href="task-overview?task=process">process a new application</a>.
+    </p>
     {% endif %}
 
 

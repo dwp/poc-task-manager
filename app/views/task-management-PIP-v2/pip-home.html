@@ -12,15 +12,23 @@ PIP MyHomepPage
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "/"
+{{ govukBackLink({
+text: "Back",
+href: "/"
 }) }}
 {% endblock %}
 
 {% block content %}
 
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% if data['isCompleted'] == 'yes' %}
+{% include "../includes/success-banner" %}
+
+{% elif data['isRejected'] == 'yes'%}
+{% include "../includes/returned-banner" %}
+
+{% endif %}
 
 <p class="govuk-heading-xl govuk-!-margin-bottom-8">My home page</p>
 
@@ -33,16 +41,20 @@ PIP MyHomepPage
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
             <p class="govuk-body govuk-!-font-weight-bold">Processing</p>
-            <p class="govuk-!-margin-bottom-2"><a class="ovuk-body govuk-!-font-size-19" href="task-overview?task=process">Process an application</a></p>
-            <p class="govuk-!-margin-bottom-2"><a class="ovuk-body govuk-!-font-size-19" href="task-overview?task=validate">Validate task checks (TBC)<a></p>
-            <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="my-open-tasks">View my open tasks</a></p>
+            <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19"
+                href="task-overview?task=eligibility">Check Elgibility (TBC)<a></p>
+            <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19"
+                href="task-overview?task=process">Process an application</a></p>
+            <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="my-open-tasks">View my
+                open tasks</a></p>
           </div>
 
 
           <div class="govuk-grid-column-one-third govuk-!-margin-bottom-6">
             <p class="govuk-body govuk-!-font-weight-bold">Queries and disputes</p>
 
-           <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="#">Take an inbound call</a>
+            <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19" href="#">Take an inbound
+                call</a>
 
             <p class="govuk-!-margin-bottom-2">
               <a class="govuk-body govuk-!-font-size-19" href="#">
@@ -56,7 +68,7 @@ PIP MyHomepPage
               </a>
             </p>
 
-            
+
           </div>
 
 
@@ -65,22 +77,22 @@ PIP MyHomepPage
             <p class="govuk-body govuk-!-font-weight-bold">
               Services
             </p>
-            
+
             <p class="govuk-!-margin-bottom-2">
               <a class="govuk-body govuk-!-font-size-19" href="#">
                 View service statistics
               </a>
             </p>
-            
+
             <p class="govuk-!-margin-bottom-6">
               <a class="govuk-body govuk-!-font-size-19" href="#">
                 Request access
               </a>
             </p>
-          
+
           </div>
         </div>
 
-               
 
-{% endblock %}
+
+        {% endblock %}

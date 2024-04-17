@@ -7,7 +7,7 @@ Task flow - 02
 
 {% block header %}
 
-  {% include "includes/internal-header-pip.html" %}
+{% include "includes/internal-header-pip.html" %}
 
 
 {% endblock %}
@@ -16,89 +16,98 @@ Task flow - 02
 
 {% if data['hasStarted'] =='yes' %}
 
-    {{ govukBackLink({
-    text: "Back",
-    href: "my-open-tasks"
-    }) }}
+  {{ govukBackLink({
+  text: "Back",
+  href: "my-open-tasks"
+  }) }}
 
 {% endif %}
-    
+
 
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row" >
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-{% if data['task'] == 'process' %}
+    {% if data['task'] == 'process' %}
 
-<!-- ================================== -->
+    <form method="post" class="form">
 
-<!-- UPDATE WITH PIP STYLES AND CONTENT -->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
 
-<!-- ================================== -->
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+              <form action="login-router" method="post" class="form">
 
-<h1 class="govuk-heading-l">Task overview</h1>
+                {% if data["search"] %}<h1 class="govuk-heading-l govuk-!-margin-bottom-1">{{ data ["search"]}}</h1>
+                {% elif data["application-selector"] == "4" %}<h1 class="govuk-heading-l govuk-!-margin-bottom-1">Sam
+                  Elliot</h1>
 
-<table class="govuk-table">
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Tasks to do</th>
-      <td class="govuk-table__cell">Determine if Health Assessment Required</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Claimant name</th>
-      <td class="govuk-table__cell">Jane Doe</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Referral date</th>
-      <td class="govuk-table__cell">9 November 2023</td>
-    </tr>
-    {# <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Benefit type</th>
-      <td class="govuk-table__cell">PIP</td>
-    </tr> #}
+                {% else %} <h1 class="govuk-heading-l govuk-!-margin-bottom-1">Jeff Bridges</h1>
+                {% endif %}
 
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">End of life</th>
-      <td class="govuk-table__cell">No</td>
-    </tr>
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">NA 11 22 33 C</p>
 
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">
-        Mental health condition
-      </th>
-      <td class="govuk-table__cell">Yes</td>
-    </tr>
+            </div>
+          </div>
 
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Task descripton</th>
-      <td class="govuk-table__cell">
-        TBC - Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos hic dolor temporibus nihil. 
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
 
-  <a href="tasklist?hasStarted=yes" class="govuk-button" data-module="govuk-button">
-    Start task
-  </a>
-    <p><a href="get-new-task?isRejected=yes&isCompleted=no">I cannot do this task</a></p>
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Application overview</h1>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Application submitted: 1 March 2024</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Date of assessment: 8 March 2024</p>
 
-{% elif data['task'] == 'validate' %}
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-1">Primary condition: Macular degeneration</p>
+          <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-6">Secondary conditions: Depression, anxiety
+            and arthritis</p>
 
-<!-- ================================ -->
+        </div>
+      </div>
 
-<!-- RENDER OUT TABLE WITH OPEN TASK -->
+    </form>
 
-<!-- ================================ -->
 
-{% endif %}
+    <a href="tasklist?hasStarted=yes" class="govuk-button" data-module="govuk-button">
+      Start task
+    </a>
+    <p><a href="pip-home?isRejected=yes&isCompleted=no">I cannot do this task</a></p>
 
-   
-      
+    {% elif data['task'] == 'eligibility' %}
+
+    <form method="post" class="form">
+
+      <div class="govuk-grid-row">
+
+          <div class="govuk-grid-row">
+              <form action="login-router" method="post" class="form">
+
+                <h2 class="govuk-heading-l govuk-!-margin-bottom-1">Rachel Carter</h2>
+                
+                <p class="govuk-body govuk-!-font-size-19 govuk-!-margin-bottom-8">NB 44 65 56 E</p>
+
+          </div>
+
+
+          <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Confirm lay eligibility criteria</h1>
+          <p class="govuk-body">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi saepe voluptate, suscipit quam necessitatibus tenetur! Deleniti ipsa nostrum reprehenderit ullam.</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-1">Application submitted: 1 March 2024</p>
+          <p class="govuk-body govuk-!-font-size-24 govuk-!-margin-bottom-3">Date of assessment: 8 March 2024</p>
+
+      </div>
+
+    </form>
+
+    <a href="tasklist?hasStarted=yes" class="govuk-button" data-module="govuk-button">
+      Start task
+    </a>
+    <p><a href="pip-home?isRejected=yes&isCompleted=no">I cannot do this task</a></p>
+
+    {% endif %}
+
+
+
   </div>
 </div>
 

@@ -55,10 +55,10 @@ Task screen/s
 
 
       <h1 class="govuk-heading-l">
-        Tasks to complete
+        {{ "Process application" if data['task'] == 'process' else "Confirm lay eligibility criteria" }}
       </h1>
 
-      <p>Determine if Health Assessment Required... Agent work to be carried out</p>
+      <p>AGENT WORK TO BE CARRIED OUT</p>
     
 
       <ol class="govuk-prototype-kit-task-list">
@@ -147,7 +147,7 @@ Task screen/s
 
       <h2 class="govuk-heading-l">You have completed all subtasks...</h2>
       <p class="govuk-body">You can complete the processing of this task</p>
-      <a href="get-new-task?isCompleted=yes&isRejected=no" class="govuk-button">Complete task</a>
+      <a href="pip-home?isCompleted=yes&isRejected=no" class="govuk-button">Complete task</a>
 
     </div>
 
