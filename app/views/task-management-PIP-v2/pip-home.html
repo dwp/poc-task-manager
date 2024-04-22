@@ -11,13 +11,6 @@ PIP MyHomepPage
 
 {% endblock %}
 
-{% block beforeContent %}
-{{ govukBackLink({
-text: "Back",
-href: "/"
-}) }}
-{% endblock %}
-
 {% block content %}
 
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
@@ -45,7 +38,7 @@ href: "/"
                 href="task-overview?task=eligibility">Check Elgibility (TBC)<a></p>
             <p class="govuk-!-margin-bottom-2"><a class="govuk-body govuk-!-font-size-19"
                 href="task-overview?task=process">Process an application</a></p>
-            <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="my-open-tasks">View my
+            <p class="govuk-!-margin-bottom-1"><a class="govuk-body govuk-!-font-size-19" href="my-open-tasks?isOpenRejected=no">View my
                 open tasks</a></p>
           </div>
 
