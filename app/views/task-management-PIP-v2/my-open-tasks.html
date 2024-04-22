@@ -18,32 +18,15 @@ href: "pip-home?isCompleted=no&isRejected=no"
 
 {% block content %}
 
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% if data['isOpenRejected'] == 'yes'%}
+{% include "../includes/returned-banner" %}
+{% endif %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-    {# {% if data['isOpenRejected'] == 'yes' %}
-
-    {% set html %}
-    <h3 class="govuk-notification-banner__heading">
-      Task returned to queue
-    </h3>
-
-    {% endset %}
-
-    {{ govukNotificationBanner({
-    html: html,
-    type: "success"
-    }) }}
-
-    {% endif %} #}
-
-    {% if data['isCompleted'] == 'yes' %}
-    {% include "../includes/success-banner" %}
-
-    {% elif data['isRejected'] == 'yes'%}
-    {% include "../includes/returned-banner" %}
-
-    {% endif %}
 
     <h1 class="govuk-heading-l">{{ 'My open tasks' if data['hasStarted'] == 'yes' else 'You have no open tasks'}}</h1>
 
@@ -62,13 +45,13 @@ href: "pip-home?isCompleted=no&isRejected=no"
   <div class="govuk-grid-column-full">
 
 
-    {% if data['hasStarted'] == 'yes' %}
+    {% if data['hasStarted'] == 'yes' and data['isCompleted'] == 'no' %}
 
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Claimant name</th>
-          <th scope="col" class="govuk-table__header">Referral date</th>
+          <th scope="col" class="govuk-table__header">Application submitted</th>
           <th scope="col" class="govuk-table__header">Task</th>
           <th scope="col" class="govuk-table__header">Status</th>
           <th scope="col" class="govuk-table__header">Actions</th>
@@ -76,9 +59,9 @@ href: "pip-home?isCompleted=no&isRejected=no"
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><a href="tasklist.html?hasStarted=yes">Jane Doe</a></th>
-          <td class="govuk-table__cell">9 November 2023</td>
-          <td class="govuk-table__cell">Determine if Health Assessment Required</td>
+          <td class="govuk-table__cell"><a href="task-overview?hasStarted=yes">Rachel Carter</a></th>
+          <td class="govuk-table__cell">1 March 2024</td>
+          <td class="govuk-table__cell">Confirm lay eligibility criteria</td>
           <td class="govuk-table__cell"><strong class="govuk-tag">Active</strong></td>
           <td class="govuk-table__cell">
             {# <div class="govuk-button-group"> #}
