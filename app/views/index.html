@@ -2,6 +2,30 @@
 
 {% set pageName="Home" %}
 
+{% block beforeContent %}
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-tag--red govuk-phase-banner__content__tag">
+          Non clinical admin team
+        </strong>
+        <strong class="govuk-tag govuk-tag--red govuk-phase-banner__content__tag">
+          HCP
+        </strong>
+        <strong class="govuk-tag govuk-tag--blue govuk-phase-banner__content__tag">
+          HAS: Decide
+        </strong>
+        <strong class="govuk-tag govuk-tag--green govuk-phase-banner__content__tag">
+          Pre-assessment referral
+        </strong>
+        <strong class="govuk-tag govuk-tag--green govuk-phase-banner__content__tag">
+          Decision making
+        </strong>
+      </p>
+    </div>
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -16,6 +40,8 @@
     <h2 class="govuk-heading-l">
       <span class="govuk-caption-l">{{ serviceName }}</span>HAS
     </h2>
+
+    <p class="govuk-heading-m">Purpose: To introduce task-based workloads as an alternative to caseloads and statuses.</p>
 
     <hr>
       <h3 class="govuk-heading-m">V3 - Current iteration</h3>
@@ -70,6 +96,9 @@
         <span class="govuk-caption-l">{{ serviceName }}</span>PIP
       </h2>
   
+
+      <p class="govuk-heading-m">Deprecated</p>
+
       <hr>
 
       <h3 class="govuk-heading-m">V2 - Screen & flow refinments</h3>
